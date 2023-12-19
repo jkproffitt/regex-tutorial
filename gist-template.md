@@ -23,17 +23,16 @@ In this tutorial we will learn how to match an Email using the following regex: 
 
 -   Anchors are unique in that they match a position within a string, not a character.
 
--   beginning ^ : Matches the beginning of the string, or the beginning of a line if the multiline flag (m) is enabled. This matches a position, not a character.
+-   beginning `^` : Matches the beginning of the string, or the beginning of a line if the multiline flag (m) is enabled. This matches a position, not a character.
 
-> Example: `^\w+`
+    > Example: `^\w+`
 
--   end $ : Matches the end of the string, or the end of a line if the multiline flag (m) is enabled. This matches a position, not a character.
+-   end `$` : Matches the end of the string, or the end of a line if the multiline flag (m) is enabled. This matches a position, not a character.
 
-> Example: `\w+$`
+    > Example: `\w+$`
 
--   word boundary \b : Matches a word boundary position between a word character and non-word character or position (start / end of string).
-
-> Example: `s\b`
+-   word boundary `\b` : Matches a word boundary position between a word character and non-word character or position (start / end of string).
+    > Example: `s\b`
 
 ### Quantifiers
 
@@ -45,11 +44,11 @@ Matches the specified quantity of the previous token. {1,3} will match 1 to 3. {
 
 Groups allow you to combine a sequence of tokens to operate on them together. Capture groups can be referenced by a backreference and accessed separately in the results.
 
--   capturing group (ABC) : Groups multiple tokens together and creates a capture group for extracting a substring or using a backreference.
+-   capturing group `(ABC)` : Groups multiple tokens together and creates a capture group for extracting a substring or using a backreference.
 
-> Example: `(ha)+`
+    > Example: `(ha)+`
 
--   named capturing group (?<name>ABC) : Creates a capturing group that can be referenced via the specified name.
+-   named capturing group `(?<name>ABC)` : Creates a capturing group that can be referenced via the specified name.
 
 -   numeric reference \1 : Matches the results of a capture group.
     > For example \1 matches the results of the first capture group & \3 matches the third.: `(\w)a\1`
@@ -58,9 +57,36 @@ Groups allow you to combine a sequence of tokens to operate on them together. Ca
 
 ### Character Classes
 
+Character classes match a character from a specific set. There are a number of predefined character classes and you can also define your own sets.
+
+-   character set `[ABC]` : Match any character in the set.
+
+    > Example: `[aeiou]`
+
+-   negated set `[^ABC]`: Match any character that is not in the set.
+
+    > Example: `[^aeiou]`
+
+-   range `[A-Z]` : Matches a character having a character code between the two specified characters inclusive.
+
+    > Example: `[g-s]`
+
+-   dot `.`: Matches any character except linebreaks. Equivalent to [^\n\r].
+
 ### The OR Operator
 
 ### Flags
+
+Expression flags change how the expression is interpreted. Flags follow the closing forward slash of the expression (ex. `/.+/igm` ).
+
+-   ignore `i` : Makes the whole expression case-insensitive.
+
+    > For example: `/aBc/i` would match AbC.
+
+-   global search `g` : Retain the index of the last match, allowing subsequent searches to start from the end of the previous match. Without the global flag, subsequent searches will return the same match.
+
+-   multiline `m` : When the multiline flag is enabled, beginning and end anchors (^ and $) will match the start and end of a line, instead of the start and end of the whole string.
+    > Note that patterns such as /^[\s\S]+$/m may return matches that span multiple lines because the anchors will match the start/end of any line.
 
 ### Character Escapes
 
