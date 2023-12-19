@@ -27,25 +27,19 @@ In this tutorial we will learn how to match an Email using the following regex: 
 
 Example:
 
-```sh
-^\w+
-```
+`^\w+`
 
 -   end $ : Matches the end of the string, or the end of a line if the multiline flag (m) is enabled. This matches a position, not a character.
 
 Example:
 
-```sh
-\w+$
-```
+`\w+$`
 
 -   word boundary \b : Matches a word boundary position between a word character and non-word character or position (start / end of string).
 
 Example:
 
-```sh
-s\b
-```
+`s\b`
 
 ### Quantifiers
 
@@ -53,29 +47,24 @@ Matches the specified quantity of the previous token. {1,3} will match 1 to 3. {
 
 Example:
 
-```sh
-b\w{2,3}
-```
+`b\w{2,3}`
 
 ### Grouping Constructs
 
 Groups allow you to combine a sequence of tokens to operate on them together. Capture groups can be referenced by a backreference and accessed separately in the results.
 
 -   capturing group (ABC) : Groups multiple tokens together and creates a capture group for extracting a substring or using a backreference.
-    Example:
 
-```sh
-(ha)+
-```
+Example:
+
+`(ha)+`
 
 -   named capturing group (?<name>ABC) : Creates a capturing group that can be referenced via the specified name.
 
 -   numeric reference \1 : Matches the results of a capture group.
     For example \1 matches the results of the first capture group & \3 matches the third.:
 
-```sh
-(\w)a\1
-```
+`(\w)a\1`
 
 ### Bracket Expressions
 
