@@ -23,17 +23,17 @@ Regexes are composed of several different components that work together to defin
 
 The most common syntax elements include:
 
-Backslash `\` : Escapes special characters and allows them to be used as literal characters.
-Brackets `[]` : Defines a set of characters to be matched.
-Parentheses `()` : Captures part of a match into a group.
-Asterisk `*` : Matches zero or more occurrences of the preceding character or character class.
-Plus sign `+` : Matches one or more occurrences of the preceding character or character class.
-Question mark `?` : Matches zero or one occurrences of the preceding character or character class.
-Pipe `|` : Used to match either of two characters or character classes.
+-   Backslash `\` : Escapes special characters and allows them to be used as literal characters.
+-   Brackets `[]` : Defines a set of characters to be matched.
+-   Parentheses `()` : Captures part of a match into a group.
+-   Asterisk `*` : Matches zero or more occurrences of the preceding character or character class.
+-   Plus sign `+` : Matches one or more occurrences of the preceding character or character class.
+-   Question mark `?` : Matches zero or one occurrences of the preceding character or character class.
+-   Pipe `|` : Used to match either of two characters or character classes.
 
 ### Anchors
 
--   Anchors are unique in that they match a position within a string, not a character.
+Anchors are unique in that they match a position within a string, not a character.
 
 -   beginning `^` : Matches the beginning of the string, or the beginning of a line if the multiline flag (m) is enabled. This matches a position, not a character.
 
@@ -44,6 +44,7 @@ Pipe `|` : Used to match either of two characters or character classes.
     > Example: `\w+$`
 
 -   word boundary `\b` : Matches a word boundary position between a word character and non-word character or position (start / end of string).
+
     > Example: `s\b`
 
 ### Quantifiers
@@ -71,14 +72,14 @@ Bracket expressions can be used to match a single character or collating element
 
 -   `[abcd]` Matches any character in the square brackets.
 
-> Example: `gr[ae]y` matches both spellings of the word 'grey'; that is, gray and grey.
+    > Example: `gr[ae]y` matches both spellings of the word 'grey'; that is, gray and grey.
 
 -   `[a-d]` Matches any character in the range of characters separated by a hyphen (-).
 
-> Example: `[0-9]` matches any decimal digit.
-> and `[ab3-5]` matches a, b, 3, 4, and 5.
+    > Example: `[0-9]` matches any decimal digit. and `[ab3-5]` matches a, b, 3, 4, and 5.
 
 -   `[^abcd]` or `[^a-d]` Matches any character except those in the square brackets or in the range of characters separated by a hyphen (-).
+
     > Example: '[^0-9]' matches any string that does not contain any numeric characters.
 
 ### Character Classes
@@ -101,9 +102,9 @@ Character classes match a character from a specific set. There are a number of p
 
 ### The OR Operator
 
-`|` represents the OR operator; which is used to include the number 0.
+-   `|` represents the OR operator; which is used to include the number 0.
 
-> Example : `(gif|png|jpg|jpeg)` matches either "gif", "png", "jpg" or "jpeg". The `|` denotes "OR" operator. The parentheses are used for grouping the selections.
+    > Example : `(gif|png|jpg|jpeg)` matches either "gif", "png", "jpg" or "jpeg". The `|` denotes "OR" operator. The parentheses are used for grouping the selections.
 
 ### Flags
 
@@ -118,6 +119,7 @@ Expression flags change how the expression is interpreted. Flags follow the clos
     > Note: Without the global flag, subsequent searches will return the same match.
 
 -   multiline `m` : When the multiline flag is enabled, beginning and end anchors (^ and $) will match the start and end of a line, instead of the start and end of the whole string.
+
     > Note that patterns such as /^[\s\S]+$/m may return matches that span multiple lines because the anchors will match the start/end of any line.
 
 ### Character Escapes
@@ -125,11 +127,13 @@ Expression flags change how the expression is interpreted. Flags follow the clos
 Escape sequences can be used to insert reserved, special, and unicode characters. All escaped characters begin with the \ character.
 
 -   reserved characters `\+` : The following characters have special meaning, and should be preceded by a \ (backslash) to represent a literal character: `+*?^$\.[]{}()|/`
+
     > Example: `\+`
 
-Within a character set, only \, -, and ] need to be escaped.
+-- Within a character set, only \, -, and ] need to be escaped.
 
 -   control character escape `\cI` : Escaped control character in the form \cZ. This can range from `\cA` (SOH, char code 1) to `\cZ` (SUB, char code 26)`.
+
     > Example : \cI matches TAB (char code 9).
 
 #### Escaped Characters

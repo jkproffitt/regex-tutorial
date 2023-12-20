@@ -1,5 +1,7 @@
 # regex-tutorial module-17 Computer Science for JavaScript: Regex Tutorial
 
+![gist link](https://gist.github.com/jkproffitt/307c7ceb9aed3888f70fc1db7af2a5ba)
+
 ## Your Task
 
 Developers write code, but they also _write about code_. Take a moment to search the web for tutorials about any of the subjects you’ve learned so far in this course. You’re likely to find thousands of tutorials written by developers of all skill levels, including junior developers&mdash;like yourself!
