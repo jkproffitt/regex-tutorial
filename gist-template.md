@@ -62,8 +62,8 @@ Groups allow you to combine a sequence of tokens to operate on them together. Ca
 
 -   named capturing group `(?<name>ABC)` : Creates a capturing group that can be referenced via the specified name.
 
--   numeric reference \1 : Matches the results of a capture group.
-    > For example \1 matches the results of the first capture group & \3 matches the third.: `(\w)a\1`
+-   numeric reference `\1` : Matches the results of a capture group.
+    > For example `\1` matches the results of the first capture group & `\3` matches the third.: `(\w)a\1`
 
 ### Bracket Expressions
 
