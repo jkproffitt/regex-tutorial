@@ -101,6 +101,10 @@ Character classes match a character from a specific set. There are a number of p
 
 ### The OR Operator
 
+`|` represents the OR operator; which is used to include the number 0.
+
+> Example : `(gif|png|jpg|jpeg)` matches either "gif", "png", "jpg" or "jpeg". The `|` denotes "OR" operator. The parentheses are used for grouping the selections.
+
 ### Flags
 
 Expression flags change how the expression is interpreted. Flags follow the closing forward slash of the expression (ex. `/.+/igm` ).
